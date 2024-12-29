@@ -1,15 +1,15 @@
-
- function createHelloWorld(){
-    return function print()
-    {
-return "Hello World"
-    }
+/**
+ * @return {Function}
+ */
+var createHelloWorld = function() {
+    
+    return function(...args) {
+        return "Hello World"
         
     }
+};
 
-
-
-
-  const f = createHelloWorld();
-  
- 
+/**
+ * const f = createHelloWorld();
+ * f(); // "Hello World"
+ */
