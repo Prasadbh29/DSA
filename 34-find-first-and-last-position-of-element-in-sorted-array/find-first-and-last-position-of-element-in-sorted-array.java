@@ -1,13 +1,14 @@
 class Solution {
     public int[] searchRange(int[] nums, int target) {
-        int[] ans={-1,-1};
+       int[] ans={-1,-1};
+        ans[0]=binary(nums,target,true);
+        
+        //what if that element not exist in array then it doesnt make sense to search for last occurence
+        if(ans[0] != -1){
+            //if first occurence is not equal to -1 i.e Element exist at range of first occurnce
+            ans[1]=binary(nums,target,false);
 
-        int start=binary(nums,target,true);
-        int end=binary(nums,target,false);
-
-        ans[0]=start;
-        ans[1]=end;
-
+        }
         return ans;
     }
 
